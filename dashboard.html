@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Dashboard - Built Homes</title>
+    <link rel="shortcut icon" href="img/logo.png" />
+    <link rel="stylesheet" href="css/plugins.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" />
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <!-- Logo -->
+        <div class="logo-wrapper valign">
+            <div class="logo">
+                <a href="index.html"> <img src="img/logo.png" class="logo-img" alt="">
+                </a>
+            </div>
+        </div>
+        <h1>Admin Dashboard</h1>
+    </nav>
+   
+    <!-- Content -->
+    <div class="content-wrapper">
+        <!-- Projects Section -->
+        <section class="section-padding2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
+                        <h2 class="section-title">Projects</h2>
+                        <button class="btn btn-primary" onclick="showPopup('project')">Add Project</button>
+                    </div>
+                </div>
+                <div class="row" id="projects-container">
+                    <div class="col-md-4 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <div class="project-item">
+                            <img src="img/project1.jpg" alt="Project Image">
+                            <h3>Project Location 1</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <div class="project-item">
+                            <img src="img/project2.jpg" alt="Project Image">
+                            <h3>Project Location 2</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <div class="project-item">
+                            <img src="img/project3.jpg" alt="Project Image">
+                            <h3>Project Location 3</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials Section -->
+        <section class="section-padding2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
+                        <h2 class="section-title">Testimonials</h2>
+                        <button class="btn btn-primary" onclick="showPopup('testimonial')">Add Testimonial</button>
+                    </div>
+                </div>
+                <div class="row" id="testimonials-container">
+                    <div class="col-md-4 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <div class="testimonial-item">
+                            <p>"Great service and support!"</p>
+                            <h4>- John Doe</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <div class="testimonial-item">
+                            <p>"Highly recommend Built Homes!"</p>
+                            <h4>- Jane Smith</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <div class="testimonial-item">
+                            <p>"Professional and reliable."</p>
+                            <h4>- Mark Wilson</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Blogs Section -->
+        <section class="section-padding2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
+                        <h2 class="section-title">Blogs</h2>
+                        <button class="btn btn-primary" onclick="showPopup('blog')">Add Blog</button>
+                    </div>
+                </div>
+                <div class="row" id="blogs-container">
+                    <div class="col-md-4 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <div class="blog-item">
+                            <img src="img/blog1.jpg" alt="Blog Image">
+                            <h3>Blog Title 1</h3>
+                            <p>Short description of the blog post.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <div class="blog-item">
+                            <img src="img/blog2.jpg" alt="Blog Image">
+                            <h3>Blog Title 2</h3>
+                            <p>Short description of the blog post.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <div class="blog-item">
+                            <img src="img/blog3.jpg" alt="Blog Image">
+                            <h3>Blog Title 3</h3>
+                            <p>Short description of the blog post.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Popup Modal -->
+    <div class="modal fade" id="popupModal" tabindex="-1" aria-labelledby="popupModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="popupModalLabel">Add New Item</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="popupForm">
+                        <div class="mb-3">
+                            <label for="itemTitle" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="itemTitle" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="itemDescription" class="form-label">Description</label>
+                            <textarea class="form-control" id="itemDescription" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="itemImage" class="form-label">Image URL</label>
+                            <input type="text" class="form-control" id="itemImage" required>
+                        </div>
+                        <input type="hidden" id="itemType">
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPopup(type) {
+            document.getElementById('itemType').value = type;
+            var popupModal = new bootstrap.Modal(document.getElementById('popupModal'));
+            popupModal.show();
+        }
+
+        document.getElementById('popupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const type = document.getElementById('itemType').value;
+            const title = document.getElementById('itemTitle').value;
+            const description = document.getElementById('itemDescription').value;
+            const image = document.getElementById('itemImage').value;
+
+            let container;
+            let newItem;
+
+            if (type === 'project') {
+                container = document.getElementById('projects-container');
+                newItem = `
+                    <div class="col-md-4 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <div class="project-item">
+                            <img src="${image}" alt="Project Image">
+                            <h3>${title}</h3>
+                            <p>${description}</p>
+                        </div>
+                    </div>
+                `;
+            } else if (type === 'testimonial') {
+                container = document.getElementById('testimonials-container');
+                newItem = `
+                    <div class="col-md-4 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <div class="testimonial-item">
+                            <p>"${description}"</p>
+                            <h4>- ${title}</h4>
+                        </div>
+                    </div>
+                `;
+            } else if (type === 'blog') {
+                container = document.getElementById('blogs-container');
+                newItem = `
+                    <div class="col-md-4 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <div class="blog-item">
+                            <img src="${image}" alt="Blog Image">
+                            <h3>${title}</h3>
+                            <p>${description}</p>
+                        </div>
+                    </div>
+                `;
+            }
+
+            container.insertAdjacentHTML('beforeend', newItem);
+            var popupModal = bootstrap.Modal.getInstance(document.getElementById('popupModal'));
+            popupModal.hide();
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
